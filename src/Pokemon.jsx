@@ -76,7 +76,7 @@ export const Pokemon = ({ pokemon }) => {
                     setConversao(response.data.stats);
                     const tiposArray = response.data.types.map(typeInfo => typeInfo.type.name);
                     setTipos(tiposArray);
-                    console.log('tiposArray', tiposArray)
+                    // console.log('tiposArray', tiposArray)
                 } else {
                     setDataType([]);
                     setHabilidades([]);
@@ -93,13 +93,12 @@ export const Pokemon = ({ pokemon }) => {
 
     return (
         <StyledContainer>
-            {console.log(tipos[0])}
             <div style={{ width: '100%', display: "flex", flexDirection: "column", justifyContent: "space-around", alignItems: "center", margin: "10px 0" }}>
-                <h1 style={{ textTransform: 'capitalize' }}>{dataTypes.name}</h1>
+                <H1 >{dataTypes.name}</H1>
                 <img width={200} src={imagem} alt="Foto do Pokemon" />
             </div>
-            <div style={{ width: '100%', backgroundColor: color[tipos[0]], display: "flex", flexDirection: "row", alignItems: "center", margin: "10px 0" }}>
-                {tipos.map((tipo) => <span key={tipo} style={{ width: tipos.length > 1 ? '50%' : '100%', display: 'flex', justifyContent: "center" }}>{tipo}</span>)}
+            <div style={{ width: '100%', display: "flex", flexDirection: "row", alignItems: "center", margin: "10px 0" }}>
+                {tipos.map((tipo) => <span key={tipo} style={{ backgroundColor: color[tipo], width: tipos.length > 1 ? '50%' : '100%', display: 'flex', justifyContent: "center" }}>{tipo}</span>)}
             </div>
             <div style={{ width: '100%', backgroundColor: "lightblue", display: "flex", flexDirection: "column", alignItems: "center", margin: "10px 0" }}>
                 <span style={{ width: '100%', textAlign: "center", backgroundColor: "skyblue" }}>Ability's</span>
@@ -158,3 +157,11 @@ const StyledContainer = styled.div`
     align-items: center;
     /* filter: drop-shadow(5px 5px 5px #000) */
 `;
+
+const H1 = styled.h1`
+text-transform: capitalize; 
+text-align: center;
+width: 100%;
+margin: 0 0 20px 0;
+background-color: 
+`
