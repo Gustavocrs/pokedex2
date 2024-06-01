@@ -94,7 +94,7 @@ export const Pokemon = ({ pokemon }) => {
     return (
         <StyledContainer>
             {console.log(tipos[0])}
-            <div style={{ width: '100%', display: "flex", flexDirection: "column", alignItems: "center", margin: "10px 0" }}>
+            <div style={{ width: '100%', display: "flex", flexDirection: "column", justifyContent: "space-around", alignItems: "center", margin: "10px 0" }}>
                 <h1 style={{ textTransform: 'capitalize' }}>{dataTypes.name}</h1>
                 <img width={200} src={imagem} alt="Foto do Pokemon" />
             </div>
@@ -141,7 +141,7 @@ export const Pokemon = ({ pokemon }) => {
                     justifyContent: 'space-around',
                 }}
             >
-                <h1 style={{ color: "white" }}>Resistências</h1>
+                <h1 style={{ color: "black", textTransform: "capitalize" }}>Resistências</h1>
                 {tipos.length > 0 && <Tipos tipos={tipos} />}
             </div>
         </StyledContainer>

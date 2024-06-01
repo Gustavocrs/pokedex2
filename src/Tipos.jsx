@@ -105,7 +105,7 @@ const Container = styled.div`
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
-    color: white;
+    color: black;
     text-align: center;
     display: flex;
     flex-direction: column;
