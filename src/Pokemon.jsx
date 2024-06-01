@@ -98,7 +98,7 @@ export const Pokemon = ({ pokemon }) => {
                 <img width={200} src={imagem} alt="Foto do Pokemon" />
             </div>
             <div style={{ width: '100%', display: "flex", flexDirection: "row", alignItems: "center", margin: "10px 0" }}>
-                {tipos.map((tipo) => <span key={tipo} style={{ backgroundColor: color[tipo], width: tipos.length > 1 ? '50%' : '100%', display: 'flex', justifyContent: "center" }}>{tipo}</span>)}
+                {tipos.map((tipo) => <span key={tipo} style={{ backgroundColor: color[tipo], width: tipos.length > 1 ? '50%' : '100%', display: 'flex', justifyContent: "center" }}>{tipo.replace("-", )}</span>)}
             </div>
             <div style={{ width: '100%', backgroundColor: "lightblue", display: "flex", flexDirection: "column", alignItems: "center", margin: "10px 0" }}>
                 <span style={{ width: '100%', textAlign: "center", backgroundColor: "skyblue" }}>Ability's</span>
