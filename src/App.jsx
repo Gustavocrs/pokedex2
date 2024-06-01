@@ -4,7 +4,7 @@ import { Pokemon } from './Pokemon'
 import styled from 'styled-components'
 
 function App() {
-  const [pokemon, setPokemon] = useState("34")
+  const [pokemon, setPokemon] = useState("")
   return (
     <div style={{ backgroundColor: 'red', height: '100%', width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
       <Input
