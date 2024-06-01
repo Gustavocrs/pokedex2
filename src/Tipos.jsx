@@ -110,6 +110,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 70px;
+    flex-grow:1;
     height: 50px;
 `;
 
