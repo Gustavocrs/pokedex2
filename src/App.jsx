@@ -6,7 +6,7 @@ import styled from 'styled-components'
 function App() {
   const [pokemon, setPokemon] = useState("")
   return (
-    <div style={{ backgroundColor: 'lightgray', minHeight: '100vh', width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+    <div style={{ backgroundColor: '#f1f1f1', minHeight: '100vh', width: "100%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
       <Input
         type="text"
         value={pokemon}

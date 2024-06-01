@@ -103,14 +103,14 @@ export const Tipos = ({ tipos }) => {
 const Container = styled.div`
     background-color: ${props => props.color || 'grey'};
     border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
+    padding: 2px;
+    margin: 3px;
     color: black;
     text-align: center;
     display: flex;
     flex-direction: column;
-    width:75px;
-    height: 60px;
+    width: 70px;
+    height: 50px;
 `;
 
 const StyledContainer = styled.div`
