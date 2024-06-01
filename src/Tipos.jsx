@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { bug, dark, dragon, electric, fairy, fighting, fire, flying, ghost, grass, ground, ice, normal, poison, psychic, rock, steel, water } from './colors';
+import axios from 'axios';
 
 export const Tipos = ({ tipos }) => {
     const [vantagens, setVantagens] = useState({});
+    let dobro = [], metade = [], nenhum = [];
 
     useEffect(() => {
         const typeAdvantages = {
@@ -74,8 +76,23 @@ export const Tipos = ({ tipos }) => {
         );
     };
 
+    useEffect(() => {
+        axios.get(`https://pokeapi.co/api/v2/type/fire`)
+            .then(response => {
+                if (response.data) {
+                    dobro.push(response.data.damage_relations.double_damage_to);
+                    metade.push(response.data.damage_relations.half_damage_to);
+                    nenhum.push(response.data.damage_relations.no_damage_to);
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [tipos]);
+
     return (
         <StyledContainer>
+            <h1 style={{ color: "black", textTransform: "capitalize" }}>Resistências</h1>
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 <Bubble color={normal} type="normal" />
                 <Bubble color={fire} type="fire" />

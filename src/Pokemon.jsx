@@ -32,7 +32,6 @@ export const Pokemon = ({ pokemon }) => {
     const [habilidades, setHabilidades] = useState([]);
     const [status, setStatus] = useState([]);
     const [conversao, setConversao] = useState([]);
-    const [valor, setValor] = useState([]);
     const [tipos, setTipos] = useState([]);
     const [color, setColor] = useState({
         'normal': normal,
@@ -71,8 +70,8 @@ export const Pokemon = ({ pokemon }) => {
                     setDataType(response.data);
                     setHabilidades(response.data.abilities);
                     setStatus(response.data.stats);
+                    // console.log(response.data)
                     setImagem(response.data.sprites.other.dream_world.front_default ? response.data.sprites.other.dream_world.front_default : response.data.sprites.front_default);
-                    setValor(response.data.types);
                     setConversao(response.data.stats);
                     const tiposArray = response.data.types.map(typeInfo => typeInfo.type.name);
                     setTipos(tiposArray);
@@ -82,7 +81,6 @@ export const Pokemon = ({ pokemon }) => {
                     setHabilidades([]);
                     setImagem([]);
                     setStatus([]);
-                    setValor([]);
                     setTipos([]);
                 }
             })
@@ -98,7 +96,7 @@ export const Pokemon = ({ pokemon }) => {
                 <img width={200} src={imagem} alt="Foto do Pokemon" />
             </div>
             <div style={{ width: '100%', display: "flex", flexDirection: "row", alignItems: "center", margin: "10px 0" }}>
-                {tipos.map((tipo) => <span key={tipo} style={{ backgroundColor: color[tipo], width: tipos.length > 1 ? '50%' : '100%', display: 'flex', justifyContent: "center" }}>{tipo.replace("-", )}</span>)}
+                {tipos.map((tipo) => <span key={tipo} style={{ backgroundColor: color[tipo], width: tipos.length > 1 ? '50%' : '100%', display: 'flex', justifyContent: "center" }}>{tipo.replace("-",)}</span>)}
             </div>
             <div style={{ width: '100%', backgroundColor: "lightblue", display: "flex", flexDirection: "column", alignItems: "center", margin: "10px 0" }}>
                 <span style={{ width: '100%', textAlign: "center", backgroundColor: "skyblue" }}>Ability's</span>
@@ -131,16 +129,7 @@ export const Pokemon = ({ pokemon }) => {
                     }
                 </div>
             </div>
-            <div
-                style={{
-                    width: '100%',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-around',
-                }}
-            >
-                <h1 style={{ color: "black", textTransform: "capitalize" }}>Resistências</h1>
+            <div style={{width: '100%',display: 'flex',flexDirection: 'row',flexWrap: 'wrap',justifyContent: 'space-around'}}>
                 {tipos.length > 0 && <Tipos tipos={tipos} />}
             </div>
         </StyledContainer>
